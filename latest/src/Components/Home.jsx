@@ -7,14 +7,14 @@ import Testimonials from './Testimonials'
 import CallToAction from './CallToAction'
 import Footer from './Footer'
 import Navbar from './Navigation'
-import Counter from './couter'
+
 
 
 const Home = () => {
   return (
     <div>
         <Navbar/>
-        <Counter/>
+        
         <HeroSection />
         <FeaturesGrid />
         <LatestNews />

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import "../App.css"
 import { Link } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../state/authslice';
 
 function Login() {
+  const dispatch = useDispatch();
+
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const value = useSelector(state => state.counter.value); 
   const handleLoginSubmit = (e) => {
@@ -16,6 +19,9 @@ function Login() {
     alert('Sign up successful! Please check your email to verify your account.');
     setIsSignUpModalOpen(false);
   };
+const handleLogin = (e)=>{
+  dispatch(loginUser())
+}
 
   return (
     <div className="bg-gradient text-white min-h-screen font-sans flex flex-col items-center justify-center p-4">
