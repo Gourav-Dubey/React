@@ -118,66 +118,77 @@ const CricketDashboard = () => {
             </div>
           )}
         </div>
-            {/* Toggle Button */}
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-md rounded-full p-2 shadow-lg overflow-hidden">
-          <div className="relative">
-            <div
-              className={`absolute inset-y-0 bg-blue-600 w-1/2 rounded-full transition-all duration-500 ease-in-out ${
-                view === "bowler" ? "translate-x-full" : ""
-              }`}
-            ></div>
-            <button
-              onClick={() => setView("batsmen")}
-              className={`relative px-6 py-4 rounded-full text-sm font-medium transition-colors duration-300 ${
-                view === "batsmen" ? "text-white" : "text-gray-400"
-              }`}
-            >
-              BATSMEN
-            </button>
-            <button
-              onClick={() => setView("bowler")}
-              className={`relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                view === "bowler" ? "text-white" : "text-gray-400"
-              }`}
-            >
-              BOWLER
-            </button>
-          </div>
-        </div>
+           {/* Toggle Button */}
+<div className="flex flex-col items-center justify-center mt-0">
+  <div className="bg-white/10 backdrop-blur-md rounded-full p-2 shadow-lg overflow-hidden w-64">
+    <div className="relative">
+      <div
+        className={`absolute inset-y-0 bg-blue-600 w-1/2 rounded-full transition-all duration-500 ease-in-out ${
+          view === "bowler" ? "translate-x-full" : ""
+        }`}
+      ></div>
+      <button
+        onClick={() => setView("batsmen")}
+        className={`relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+          view === "batsmen" ? "text-white" : "text-gray-400"
+        }`}
+      >
+        BATSMEN
+      </button>
+      <button
+        onClick={() => setView("bowler")}
+        className={`relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+          view === "bowler" ? "text-white" : "text-gray-400"
+        }`}
+      >
+        BOWLER
+      </button>
+    </div>
+  </div>
 
-        {/* Strategy Content */}
-        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 w-96 bg-gray-800/90 backdrop-blur-sm text-white p-3 rounded-lg border border-gray-600">
-          {view === "batsmen" ? (
-            <div className="fade-in-scale">
-              <h3 className="text-xl font-semibold text-blue-400 mb-3">BATSMEN STRATEGY</h3>
-              <p className="text-sm leading-relaxed mb-4">
-                Reverse sweep Incoming. Focus on rotating the strike and building a partnership. Look for gaps in the
-                field and take quick singles. Avoid risky shots and play along the ground.
-              </p>
-              <video className="w-full h-64 rounded-lg border border-gray-600 mb-4" autoPlay muted loop>
-                <source src="./video/videoplayback (6).mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          ) : (
-            <div className="fade-in-scale">
-              <h3 className="text-xl font-semibold text-blue-400 mb-3">BOWLING STRATEGY</h3>
-              <p className="text-sm leading-relaxed mb-4">
-                Head looking uncomfortable against leg spin googly below 98kmph. Chahal can bowl his 4th 5th delivery to
-                Head as googly below 98 kmph and long on to stay attentive for a catch.
-              </p>
-              <video className="w-full h-64 border border-gray-600 mb-4" autoPlay muted loop>
-                <source src="./video/videoplayback (5).mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          )}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-sm flex items-center">
-            MORE STRATEGY
-            <ChevronRight className="w-4 h-4 ml-2" />
-          </button>
+  {/* Cards Section */}
+  <div className="grid grid-cols-2 gap-4 mt-6 bg-gray-800/90 backdrop-blur-sm text-white p-6 rounded-lg border border-gray-600">
+    {view === "batsmen" ? (
+      <>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Next Shot Prediction</h3>
+          <p className="text-sm mt-2">Reverse sweep or lofted cover drive expected.</p>
         </div>
-
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Strategy to Get Batsmen Out</h3>
+          <p className="text-sm mt-2">Try bowling wide outside off with a fielder at deep cover.</p>
+        </div>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Strong & Weak Areas</h3>
+          <p className="text-sm mt-2">Strong against short balls, weak against slow yorkers.</p>
+        </div>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Predictive Score</h3>
+          <p className="text-sm mt-2">Estimated 45-55 runs in next 10 overs.</p>
+        </div>
+      </>
+    ) : (
+      <>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Next Ball Prediction</h3>
+          <p className="text-sm mt-2">Leg spin googly expected around 95 kmph.</p>
+        </div>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Strategy to Score Runs</h3>
+          <p className="text-sm mt-2">Look for singles, exploit field gaps on the off-side.</p>
+        </div>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Strong & Weak Areas</h3>
+          <p className="text-sm mt-2">Weak against inswinging yorkers, strong against off-spin.</p>
+        </div>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-blue-400">Predictive Score</h3>
+          <p className="text-sm mt-2">Projected economy rate of 5.5 in next 5 overs.</p>
+        </div>
+      </>
+    )}
+  </div>
+</div>
 
 
         
@@ -257,3 +268,74 @@ const CricketDashboard = () => {
 }
 
 export default CricketDashboard
+
+// import { useState, useEffect } from "react";
+// import { Clock, MessageCircle, XCircle, Send, X, Zap, ChevronRight } from "lucide-react";
+// import { motion } from "framer-motion";
+
+// const CricketDashboard = () => {
+//   const [view, setView] = useState("batsmen");
+//   const [isEngineRunning, setIsEngineRunning] = useState(false);
+//   const [matchTime, setMatchTime] = useState("14:30");
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       const now = new Date();
+//       setMatchTime(now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }));
+//     }, 1000);
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   return (
+//     <div className="min-h-screen bg-green-800 overflow-hidden flex flex-col items-center justify-center">
+//       {/* Header */}
+//       <header className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white p-4 flex justify-between w-full items-center">
+//         <h1 className="text-3xl font-bold text-blue-400">NXT MOOV ENGINE</h1>
+//         <div className="flex items-center gap-4">
+//           <div className="flex items-center gap-2">
+//             <Clock className="w-5 h-5 text-blue-400" />
+//             <span className="text-sm"> Time: {matchTime}</span>
+//           </div>
+//         </div>
+//       </header>
+
+//       {/* Toggle Button */}
+//       <div className="flex gap-4 my-6">
+//         <button
+//           onClick={() => setView("batsmen")}
+//           className={`px-6 py-2 rounded-full font-medium transition-all ${view === "batsmen" ? "bg-blue-600 text-white" : "bg-gray-400 text-black"}`}
+//         >
+//           BATSMEN
+//         </button>
+//         <button
+//           onClick={() => setView("bowler")}
+//           className={`px-6 py-2 rounded-full font-medium transition-all ${view === "bowler" ? "bg-blue-600 text-white" : "bg-gray-400 text-black"}`}
+//         >
+//           BOWLER
+//         </button>
+//       </div>
+
+//       {/* Strategy Cards */}
+//       <motion.div 
+//         key={view} 
+//         initial={{ opacity: 0, y: 50 }} 
+//         animate={{ opacity: 1, y: 0 }} 
+//         transition={{ duration: 0.5 }}
+//         className="grid grid-cols-2 gap-4 p-6 bg-gray-800 rounded-lg shadow-lg"
+//       >
+//         {[...Array(4)].map((_, index) => (
+//           <motion.div
+//             key={index}
+//             initial={{ opacity: 0, scale: 0.8 }}
+//             animate={{ opacity: 1, scale: 1 }}
+//             transition={{ delay: index * 0.2, duration: 0.5 }}
+//             className="w-40 h-40 bg-gray-700 rounded-lg shadow-md"
+//           ></motion.div>
+//         ))}
+//       </motion.div>
+//     </div>
+//   );
+// };
+
+// export default CricketDashboard;
+
