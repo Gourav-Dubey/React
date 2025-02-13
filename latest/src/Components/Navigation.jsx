@@ -54,8 +54,8 @@ const Navbar = () => {
                 <li><Link to="/kabaddi" className="block px-4 py-2 hover:bg-gray-700">Kabaddi</Link></li>
               </ul>
             </div>
-            <Link to="/about" className="text-white hover:text-blue-400 transition">About Us</Link>
-            <Link to="/news" className="text-white hover:text-blue-400 transition">News</Link>
+            <Link to="/AboutUs" className="text-white hover:text-blue-400 transition">About Us</Link>
+            <Link to="/News" className="text-white hover:text-blue-400 transition">News</Link>
             <Link to="/login" className="text-white hover:text-blue-400 transition">Connect Us</Link>
           </div>
 
@@ -98,7 +98,7 @@ const Navbar = () => {
                 <Link to="/kabaddi" className="block text-white hover:bg-blue-500/20 p-2 rounded-md">Kabaddi</Link>
               </div>
             )}
-            <Link to="/about" className="block text-white hover:bg-blue-500/20 p-2 rounded-md">About Us</Link>
+            <Link to="/AboutUs" className="block text-white hover:bg-blue-500/20 p-2 rounded-md">About Us</Link>
             <Link to="/news" className="block text-white hover:bg-blue-500/20 p-2 rounded-md">News</Link>
             <Link to="/login" className="block text-white hover:bg-blue-500/20 p-2 rounded-md">Connect Us</Link>
           </div>
@@ -109,3 +109,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+ 

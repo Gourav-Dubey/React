@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Clock, MessageCircle, XCircle, Send, X, Zap, ChevronRight } from "lucide-react"
 
+
 const CricketDashboard = () => {
   const [view, setView] = useState("batsmen")
   const [isEngineRunning, setIsEngineRunning] = useState(false)
@@ -40,7 +41,8 @@ const CricketDashboard = () => {
   const toggleEngine = () => setIsEngineRunning(!isEngineRunning)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
+    
+    <div className="min-h-screen bg-green-800 overflow-hidden">
       {/* Header */}
       <header className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white p-4 flex justify-between items-center">
         <h1 className="text-3xl font-bold text-blue-400">NXT MOOV ENGINE</h1>
@@ -57,14 +59,14 @@ const CricketDashboard = () => {
       </header>
 
       {/* Main Content Area */}
-      <div className="relative h-[calc(100vh-60px)] bg-gradient-to-b from-gray-800 to-gray-900">
+      <div className="relative h-[calc(100vh-60px)] bg- overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://source.unsplash.com/random/1920x1080/?cricket-stadium')] opacity-20 bg-cover bg-center"></div>
 
         {/* Chat Button and Query Box Container */}
         <div className="absolute right-4 top-[9px]">
           {/* Chat Button */}
           <div
-            className="flex items-center justify-start gap-2 w-auto h-12 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-full shadow-lg cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 px-4 overflow-hidden"
+            className="flex items-center justify-start gap-2 w-auto h-12 bg-blue-500 hover:from-blue-700 hover:to-blue-800 rounded-full shadow-lg cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 px-4 overflow-hidden"
             onMouseEnter={() => setIsChatBoxOpen(true)}
           >
             <MessageCircle className="text-white w-6 h-6" />
@@ -76,7 +78,7 @@ const CricketDashboard = () => {
           {/* Query Box Container */}
           {isChatBoxOpen && (
             <div
-              className="w-[450px] bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 backdrop-blur-lg text-white p-3 rounded-2xl border border-gray-600 shadow-xl transition-all duration-500 ease-in-out transform scale-95 opacity-100"
+              className="w-[450px] bg-black backdrop-blur-lg text-white p-3 rounded-2xl border border-gray-600 shadow-xl transition-all duration-500 ease-in-out transform scale-95 opacity-100"
               onMouseLeave={() => setIsChatBoxOpen(false)}
             >
               <div className="flex items-center justify-between mb-4">
@@ -96,14 +98,14 @@ const CricketDashboard = () => {
               {/* Buttons */}
               <div className="flex justify-between items-center">
                 {/* Submit Button */}
-                <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md">
+                <button className="bg-blue-600 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md">
                   <Send className="w-5 h-5 mr-2" />
                   Send
                 </button>
 
                 {/* Clear Button */}
                 <button
-                  className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md"
+                  className="bg-red-500 hover:from-red-700 hover:to-red-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md"
                   onClick={() => {
                     const textarea = document.querySelector("textarea")
                     if (textarea) textarea.value = ""
@@ -116,8 +118,7 @@ const CricketDashboard = () => {
             </div>
           )}
         </div>
-
-        {/* Toggle Button */}
+            {/* Toggle Button */}
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-md rounded-full p-2 shadow-lg overflow-hidden">
           <div className="relative">
             <div
@@ -177,6 +178,9 @@ const CricketDashboard = () => {
           </button>
         </div>
 
+
+
+        
         {/* Engine Analytics */}
         <div className="fixed top-20 left-8 bg-gray-800/90 backdrop-blur-sm text-white p-3 rounded-lg border border-gray-600 w-[500px]">
           <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -219,7 +223,7 @@ const CricketDashboard = () => {
             </button>
           </div>
         </div>
-
+      
         {/* Bottom Score Dashboard */}
         <footer className="fixed bottom-0 left-0 right-0 bg-gray-800/90 backdrop-blur-sm text-white py-4 border-t border-gray-600">
           <div className="container mx-auto px-4">
