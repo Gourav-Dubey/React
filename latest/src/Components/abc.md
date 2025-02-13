@@ -57,3 +57,61 @@
             <ChevronRight className="w-4 h-4 ml-2" />
           </button>
         </div>
+
+
+ {/* Chat Button and Query Box Container */}
+        <div className="absolute right-4 top-[9px]">
+          {/* Chat Button */}
+          <div
+            className="flex items-center justify-start gap-2 w-auto h-12 bg-blue-500 hover:from-blue-700 hover:to-blue-800 rounded-full shadow-lg cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 px-4 overflow-hidden"
+            onMouseEnter={() => setIsChatBoxOpen(true)}
+          >
+            <MessageCircle className="text-white w-6 h-6" />
+            <span className="text-white font-medium transition-opacity duration-500 opacity-0 hover:opacity-100">
+              QUERY
+            </span>
+          </div>
+
+          {/* Query Box Container */}
+          {isChatBoxOpen && (
+            <div
+              className="w-[450px] bg-black backdrop-blur-lg text-white p-3 rounded-2xl border border-gray-600 shadow-xl transition-all duration-500 ease-in-out transform scale-95 opacity-100"
+              onMouseLeave={() => setIsChatBoxOpen(false)}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold">Ask Query to Engine</h3>
+                <button className="text-gray-400 hover:text-red-500 transition" onClick={() => setIsChatBoxOpen(false)}>
+                  <XCircle className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Query Textarea */}
+              <textarea
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded-lg p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                rows={4}
+                placeholder="Type your message here..."
+              ></textarea>
+
+              {/* Buttons */}
+              <div className="flex justify-between items-center">
+                {/* Submit Button */}
+                <button className="bg-blue-600 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md">
+                  <Send className="w-5 h-5 mr-2" />
+                  Send
+                </button>
+
+                {/* Clear Button */}
+                <button
+                  className="bg-red-500 hover:from-red-700 hover:to-red-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md"
+                  onClick={() => {
+                    const textarea = document.querySelector("textarea")
+                    if (textarea) textarea.value = ""
+                  }}
+                >
+                  <X className="w-5 h-5 mr-2" />
+                  Clear
+                </button>
+              </div>
+            </div>
+          )}
+        </div>

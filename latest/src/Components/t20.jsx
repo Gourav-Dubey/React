@@ -59,67 +59,84 @@ const CricketDashboard = () => {
       </header>
 
       {/* Main Content Area */}
-      <div className="relative h-[calc(100vh-60px)] bg- overflow-hidden">
+      <div className="relative h-[calc(100vh-60px)]  overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://source.unsplash.com/random/1920x1080/?cricket-stadium')] opacity-20 bg-cover bg-center"></div>
 
-        {/* Chat Button and Query Box Container */}
-        <div className="absolute right-4 top-[9px]">
-          {/* Chat Button */}
-          <div
-            className="flex items-center justify-start gap-2 w-auto h-12 bg-blue-500 hover:from-blue-700 hover:to-blue-800 rounded-full shadow-lg cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 px-4 overflow-hidden"
-            onMouseEnter={() => setIsChatBoxOpen(true)}
-          >
-            <MessageCircle className="text-white w-6 h-6" />
-            <span className="text-white font-medium transition-opacity duration-500 opacity-0 hover:opacity-100">
-              QUERY
-            </span>
-          </div>
+    {/* Chat Button and Query Box Container */}
+<div className="fixed right-6 top-20 z-50 flex flex-col items-end">
+  {/* Chat Button */}
+  <div
+    className="flex items-center gap-3 w-auto h-14 bg-black hover:scale-110 transition-all duration-300 ease-in-out shadow-xl px-5 rounded-full cursor-pointer group"
+    onClick={() => setIsChatBoxOpen(!isChatBoxOpen)}
+  >
+    <MessageCircle className="text-white w-7 h-7 animate-pulse group-hover:animate-none transition-all duration-300" />
+    <span className="text-white font-semibold text-sm tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      ASK ENGINE
+    </span>
+  </div>
 
-          {/* Query Box Container */}
-          {isChatBoxOpen && (
-            <div
-              className="w-[450px] bg-black backdrop-blur-lg text-white p-3 rounded-2xl border border-gray-600 shadow-xl transition-all duration-500 ease-in-out transform scale-95 opacity-100"
-              onMouseLeave={() => setIsChatBoxOpen(false)}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold">Ask Query to Engine</h3>
-                <button className="text-gray-400 hover:text-red-500 transition" onClick={() => setIsChatBoxOpen(false)}>
-                  <XCircle className="w-6 h-6" />
-                </button>
-              </div>
+  {/* Query Box */}
+  {isChatBoxOpen && (
+    <div className="mt-4 w-[380px] bg-gray-900 text-white p-4 rounded-xl border border-gray-700 shadow-2xl animate-slide-in transition-all duration-300 ease-in-out">
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="text-lg font-semibold text-blue-400">Ask Your Query</h3>
+        <button className="text-gray-400 hover:text-red-500 transition" onClick={() => setIsChatBoxOpen(false)}>
+          <XCircle className="w-5 h-5" />
+        </button>
+      </div>
 
-              {/* Query Textarea */}
-              <textarea
-                className="w-full bg-gray-700 text-white border border-gray-600 rounded-lg p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-                rows={4}
-                placeholder="Type your message here..."
-              ></textarea>
+      {/* Query Textarea */}
+      <textarea
+        className="w-full bg-gray-800 text-white border border-gray-700 rounded-lg p-2 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 resize-none"
+        rows={4}
+        placeholder="Type your message..."
+      ></textarea>
 
-              {/* Buttons */}
-              <div className="flex justify-between items-center">
-                {/* Submit Button */}
-                <button className="bg-blue-600 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md">
-                  <Send className="w-5 h-5 mr-2" />
-                  Send
-                </button>
+      {/* Buttons */}
+      <div className="flex justify-between">
+        {/* Send Button */}
+        <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg transition-all duration-300 flex items-center shadow-md hover:scale-105">
+          <Send className="w-5 h-5 mr-2" />
+          Send
+        </button>
 
-                {/* Clear Button */}
-                <button
-                  className="bg-red-500 hover:from-red-700 hover:to-red-800 text-white px-6 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105 flex items-center shadow-md"
-                  onClick={() => {
-                    const textarea = document.querySelector("textarea")
-                    if (textarea) textarea.value = ""
-                  }}
-                >
-                  <X className="w-5 h-5 mr-2" />
-                  Clear
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-           {/* Toggle Button */}
-<div className="flex flex-col items-center justify-center mt-0">
+        {/* Clear Button */}
+        <button
+          className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg transition-all duration-300 flex items-center shadow-md hover:scale-105"
+          onClick={() => {
+            const textarea = document.querySelector("textarea");
+            if (textarea) textarea.value = "";
+          }}
+        >
+          <X className="w-5 h-5 mr-2" />
+          Clear
+        </button>
+      </div>
+    </div>
+  )}
+</div>
+
+{/* Animations */}
+<style>
+{`
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+`}
+</style>
+        {/* Toggle Button */}
+<div className="flex flex-col items-center justify-center mt-10">
   <div className="bg-white/10 backdrop-blur-md rounded-full p-2 shadow-lg overflow-hidden w-64">
     <div className="relative">
       <div
@@ -191,49 +208,45 @@ const CricketDashboard = () => {
 </div>
 
 
-        
-        {/* Engine Analytics */}
-        <div className="fixed top-20 left-8 bg-gray-800/90 backdrop-blur-sm text-white p-3 rounded-lg border border-gray-600 w-[500px]">
-          <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-            <Zap className="w-5 h-5 text-yellow-400" />
-            LIVE ENGINE PERFORMANCE
-          </h3>
 
-          <div className="space-y-6">
-            <div>
-              <div className="flex justify-between mb-2">
-                <span className="text-sm text-gray-400">Accuracy</span>
-                <span className="text-sm font-medium text-blue-400">{accuracy.toFixed(1)}%</span>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <div
-                  className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-out"
-                  style={{ width: `${accuracy}%` }}
-                ></div>
-              </div>
-            </div>
+   {/* Engine Analytics */}
+<div className="fixed top-20 left-6 bg-gray-900/90 backdrop-blur-lg text-white p-5 rounded-full border border-gray-700 w-[250px] h-[250px] flex flex-col items-center justify-center shadow-2xl ring-2 ring-blue-500/30">
+  <h3 className="text-sm font-semibold flex items-center gap-2 text-center text-blue-400 uppercase tracking-wider">
+    <Zap className="w-4 h-4 text-yellow-400 animate-pulse" />
+    Engine Stats
+  </h3>
 
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Opportunities caught</span>
-              <span className="font-medium text-blue-400">{opportunitiesCaught}</span>
-            </div>
+  <div className="mt-3 text-center space-y-2">
+    <div>
+      <p className="text-xs text-gray-400">Accuracy</p>
+      <p className="text-lg font-semibold text-blue-400">{accuracy.toFixed(1)}%</p>
+    </div>
 
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Missed opportunities</span>
-              <span className="font-medium text-red-400">{missedOpportunities}</span>
-            </div>
+    <div className="flex justify-center space-x-6 mt-2">
+      <div className="text-center">
+        <p className="text-xs text-gray-400">Caught</p>
+        <p className="text-md font-medium text-green-400">{opportunitiesCaught}</p>
+      </div>
+      <div className="text-center">
+        <p className="text-xs text-gray-400">Missed</p>
+        <p className="text-md font-medium text-red-400">{missedOpportunities}</p>
+      </div>
+    </div>
+  </div>
 
-            <button
-              onClick={toggleEngine}
-              className={`w-full text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center ${
-                isEngineRunning ? "bg-red-600 hover:bg-red-700" : "bg-blue-600 hover:bg-blue-700"
-              }`}
-            >
-              <span>{isEngineRunning ? "Stop Engine" : "Start Engine"}</span>
-              {isEngineRunning && <div className="ml-2 w-4 h-4 bg-white rounded-full pulse"></div>}
-            </button>
-          </div>
-        </div>
+  <button
+    onClick={toggleEngine}
+    className={`mt-4 text-xs font-bold px-3 py-1.5 rounded-full shadow-md transition-all duration-300 flex items-center gap-1 ${
+      isEngineRunning ? "bg-red-600 hover:bg-red-700 shadow-red-400/50" : "bg-blue-600 hover:bg-blue-700 shadow-blue-400/50"
+    }`}
+  >
+    {isEngineRunning ? "Stop Engine" : "Start Engine"}
+    {isEngineRunning && <div className="ml-1 w-2 h-2 bg-white rounded-full animate-ping"></div>}
+  </button>
+</div>
+
+
+
       
         {/* Bottom Score Dashboard */}
         <footer className="fixed bottom-0 left-0 right-0 bg-gray-800/90 backdrop-blur-sm text-white py-4 border-t border-gray-600">
