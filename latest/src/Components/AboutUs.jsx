@@ -9,7 +9,7 @@ const AboutUs = () => {
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="./public/assets/aboutsp.avif"
+            src="/assets/aboutsp.avif"
             alt="Sports Background"
             className="object-cover w-full h-full"
           />
@@ -55,7 +55,7 @@ const AboutUs = () => {
             </div>
             <div className="relative h-[300px] rounded-2xl overflow-hidden">
               <img
-                src="./public/assets/WhatsApp Image 2025-01-07 at 09.45.56_14bf5c1c.jpg"
+                src="/assets/WhatsApp Image 2025-01-07 at 09.45.56_14bf5c1c.jpg"
                 alt="Team"
                 className="object-cover w-full h-full"
               />
