@@ -9,7 +9,7 @@ const AboutUs = () => {
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="./src/assets/aboutsp.avif"
+            src="./public/assets/aboutsp.avif"
             alt="Sports Background"
             className="object-cover w-full h-full"
           />
@@ -40,7 +40,7 @@ const AboutUs = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Akash Dubey</h3>
-                  <p className="text-gray-600">CEO (AI)</p>
+                  <p className="text-gray-600"></p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
@@ -49,13 +49,13 @@ const AboutUs = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Ashish Ritwal</h3>
-                  <p className="text-gray-600">CTO (AI)</p>
+                  <p className="text-gray-600"></p>
                 </div>
               </div>
             </div>
             <div className="relative h-[300px] rounded-2xl overflow-hidden">
               <img
-                src="./src/assets/WhatsApp Image 2025-01-07 at 09.45.56_14bf5c1c.jpg"
+                src="./public/assets/WhatsApp Image 2025-01-07 at 09.45.56_14bf5c1c.jpg"
                 alt="Team"
                 className="object-cover w-full h-full"
               />
@@ -65,7 +65,7 @@ const AboutUs = () => {
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 px-4 bg-blue-500 text-white">
+      <section className="py-20 px-4 bg-blue-800 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Vision</h2>
@@ -87,7 +87,7 @@ const AboutUs = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden group">
               <div className="p-6">
                 <div className="mb-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center mb-4">
                     <i data-lucide="target" className="w-6 h-6 text-blue-600"></i>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Nxt Moov Cricket Engine</h3>
@@ -108,7 +108,7 @@ const AboutUs = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden group">
               <div className="p-6">
                 <div className="mb-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center mb-4">
                     <i data-lucide="globe" className="w-6 h-6 text-blue-600"></i>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Nxt Moov Badminton/Table tennis</h3>
@@ -129,7 +129,7 @@ const AboutUs = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden group">
               <div className="p-6">
                 <div className="mb-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center mb-4">
                     <i data-lucide="line-chart" className="w-6 h-6 text-blue-600"></i>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Nxt Moov Kabaddi Engine</h3>
@@ -151,7 +151,7 @@ const AboutUs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-blue-500 text-white">
+      <section className="py-20 px-4 bg-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
           {/* <div className="space-y-6">
             <p className="text-xl md:text-2xl">

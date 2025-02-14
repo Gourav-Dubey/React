@@ -30,25 +30,25 @@ const Testimonials = () => {
             quote="NXTMOOV has completely changed how I follow sports. The live updates and expert analysis are unmatched!"
             name="Gourav Dubey"
             title="Sports Enthusiast"
-            image="./src/assets/gourav.webp"
+            image="./public/assets/gourav.webp"
           />
           <TestimonialCard
             quote="As a professional athlete, I rely on NXTMOOV for the most up-to-date information and insights in the sports world."
             name="Shikhar Arora"
             title="Professional Athlete"
-            image="/src/assets/shikhar.webp"
+            image="/public/assets/shikhar.webp"
           />
           <TestimonialCard
             quote="This platform provides accurate and fast news, making it my go-to source for everything sports!"
             name="Ananya Mishra"
             title="Journalist"
-            image="/src/assets/ananya.webp"
+            image="/public/assets/ananya.webp"
           />
           <TestimonialCard
             quote="NXTMOOV is a game changer! I always get the latest stats and updates right when I need them."
             name="Rahul Sen"
             title="Football Coach"
-            image="/src/assets/rahul.webp"
+            image="/public/assets/rahul.webp"
           />
         </motion.div>
       </div>

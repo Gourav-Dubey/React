@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const NewsPage = () => {
   // Smooth scrolling for anchor links
@@ -53,7 +54,7 @@ const NewsPage = () => {
         {/* Hero Section */}
         <div className="relative h-[60vh] mb-12 rounded-lg overflow-hidden group animate-fade-in">
           <img
-            src="./images/Rise-of-AI-in-Sports-From-Predictive-Analytics-to-Injury-Prevention-Explained.webp"
+            src="./public/assets/Rise-of-AI-in-Sports-From-Predictive-Analytics-to-Injury-Prevention-Explained.webp"
             alt="AI in Sports"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -75,7 +76,7 @@ const NewsPage = () => {
             {/* News Card 1 */}
             <div className="bg-dark-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 group">
               <img
-                src="./images/maxresdefault.jpg"
+                src="./public/assets/maxresdefault.jpg"
                 alt="Nxt Moov Partners with Gujarat Titans"
                 className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -96,7 +97,7 @@ const NewsPage = () => {
             {/* News Card 2 */}
             <div className="bg-dark-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 group">
               <img
-                src="./images/COVER_2-1.webp"
+                src="./public/assets/COVER_2-1.webp"
                 alt="AI-Powered Insights Transform Table Tennis Training"
                 className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -117,7 +118,7 @@ const NewsPage = () => {
             {/* News Card 3 */}
             <div className="bg-dark-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 group">
               <img
-                src="./images/0_i_QojZivMfOeNbO7.png"
+                src="./public/assets/0_i_QojZivMfOeNbO7.png"
                 alt="Kabaddi Franchise Patna Pirates Joins Nxt Moov"
                 className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -146,7 +147,7 @@ const NewsPage = () => {
               {/* Latest News Card 1 */}
               <div className="bg-dark-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 group">
                 <img
-                  src="./images/1_KRSmnuwPr1ifT_W7DPzKHg.png"
+                  src="./public/assets/1_KRSmnuwPr1ifT_W7DPzKHg.png"
                   alt="Nxt Moov Expands to European Football Market"
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -167,7 +168,7 @@ const NewsPage = () => {
               {/* Latest News Card 2 */}
               <div className="bg-dark-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 group">
                 <img
-                  src="./images/1200x675_cmsv2_799d355b-9258-5d51-89d0-3b9e4a912fd4-8535256.webp"
+                  src="./public/assets/1200x675_cmsv2_799d355b-9258-5d51-89d0-3b9e4a912fd4-8535256.webp"
                   alt="Olympic Committee Explores Nxt Moov Technology"
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -188,7 +189,7 @@ const NewsPage = () => {
               {/* Latest News Card 3 */}
               <div className="bg-dark-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 group">
                 <img
-                  src="./images/1_CZnWFyVrek-9UavLtS9Y9Q.jpg"
+                  src="./public/assets/1_CZnWFyVrek-9UavLtS9Y9Q.jpg"
                   alt="Nxt Moov Launches Advanced Basketball Analytics"
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                 />

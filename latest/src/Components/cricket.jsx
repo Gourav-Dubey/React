@@ -35,7 +35,7 @@ const CricketMatches = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[url('./src/assets/istockphoto-464497970-612x612.jpg')] bg-cover bg-center">
+    <div className="relative min-h-screen bg-[url('./public/assets/istockphoto-464497970-612x612.jpg')] bg-cover bg-center">
       <div className="relative z-10 bg-white bg-opacity-25 min-h-screen p-8">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-center mb-16 text-primary-700 tracking-tight">

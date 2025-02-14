@@ -27,19 +27,19 @@ const LatestNews = () => {
           }}
         >
           <NewsCard
-            image="./src/assets/cricket.png"
+            image="./public/assets/cricket.png"
             title="Cricket World Cup Update"
             description="Latest scores and highlights from the ongoing Cricket World Cup matches."
             link="/news/cricket"
           />
           <NewsCard
-            image="./src/assets/football.png"
+            image="./public/assets/football.png"
             title="Football Transfer Rumors"
             description="The latest transfer gossip and confirmed deals in the football world."
             link="/news/football"
           />
           <NewsCard
-            image="./src/assets/tennis.webp"
+            image="./public/assets/tennis.webp"
             title="Tennis Grand Slam Results"
             description="Recap of the latest Grand Slam tournament and player rankings."
             link="/news/tennis"
