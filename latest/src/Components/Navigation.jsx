@@ -55,7 +55,7 @@ const Navbar = () => {
               </ul>
             </div>
             <Link to="/AboutUs" className="text-white hover:text-blue-400 transition">About Us</Link>
-            <Link to="/News" className="text-white hover:text-blue-400 transition">News</Link>
+            {/* <Link to="/News" className="text-white hover:text-blue-400 transition">News</Link> */}
             <Link to="/login" className="text-white hover:text-blue-400 transition">Connect Us</Link>
           </div>
 
