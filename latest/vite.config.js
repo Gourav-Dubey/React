@@ -6,7 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(),
-    "@tailwindcss/postcss",
+    require("tailwindcss"),
+    require("autoprefixer"),
   
   ],
 
